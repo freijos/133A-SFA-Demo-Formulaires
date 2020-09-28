@@ -1,10 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaires HTML</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-
+<form action="https://www.kode.ch/getpost/" method="post">
+    <h1>Formulaire d'inscription</h1>
+    <ul>
+        <li>
+            <label for="nom">Nom de famille <span>*</span></label>
+            <input autofocus required type="text" id="nom" name="nom">
+        </li>
+        <li>
+            <label for="prenom">Prénom <span>*</span></label>
+            <input required type="text" id="prenom" name="prenom">
+        </li>
+        <li>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email">
+        </li>
+        <li>
+            <label for="message">Votre message</label>
+            <textarea name="message" id="message"
+                      cols="50" rows="10"></textarea>
+        </li>
+        <li>
+            <input type="checkbox" name="copie" id="copie">
+            <label for="copie">Je veux recevoir une copie du message</label>
+        </li>
+        <li>
+            <fieldset>
+                <legend>Sélectionnez votre pays d'origine <span>*</span></legend>
+                <div>
+                    <input required
+                           type="radio"
+                           name="pays"
+                           id="pays-fr"
+                           value="fr"
+                    >
+                    <label for="pays-fr">France</label>
+                </div>
+                <div>
+                    <input type="radio" name="pays" id="pays-it" value="it">
+                    <label for="pays-it">Italie</label>
+                </div>
+                <div>
+                    <input type="radio" name="pays" id="pays-ch" value="ch">
+                    <label for="pays-ch">Suisse</label>
+                </div>
+            </fieldset>
+        </li>
+        <li>
+            <label for="destination">
+                Sélectionner votre destination favorite
+                <span>*</span>
+            </label>
+            <select required name="destination" id="destination">
+                <option value="">-- Sélectionnez une destination --</option>
+                <optgroup label="Europe">
+                    <option value="fr">France</option>
+                    <option value="it">Italie</option>
+                    <option value="ch">Suisse</option>
+                </optgroup>
+                <optgroup label="Amérique">
+                    <option value="br">Brésil</option>
+                    <option value="ca">Canada</option>
+                    <option value="us">Etats-Unis</option>
+                </optgroup>
+            </select>
+        </li>
+        <li>
+            <fieldset>
+                <legend>Sélectionnez vos musiques préférées</legend>
+                <div>
+                    <input type="checkbox" name="musique[]" id="musique-pop" value="pop">
+                    <label for="musique-pop">Pop</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="musique[]" id="musique-rock" value="rock">
+                    <label for="musique-rock">Rock</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="musique[]" id="musique-punk" value="punk">
+                    <label for="musique-punk">Punk</label>
+                </div>
+            </fieldset>
+        </li>
+        <li>
+            <!-- <input type="submit"> -->
+            <!-- <button type="reset">Reset</button> -->
+            <button type="submit">Envoyer</button>
+            <a href="#">Annuler</a>
+        </li>
+    </ul>
+</form>
 </body>
 </html>
